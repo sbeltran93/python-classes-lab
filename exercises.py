@@ -1,13 +1,3 @@
-#render a welcome message - done
-#get_move - done
-#render players turn -done
-#error message for: to enter valid move,- done
-#not too moves in the same cell
-#updated board after turn
-#render winner
-#function to handle players move and .lower -done
-#switch players
-
 #game inital properties -done
 #make board -done
 #input for turn -done
@@ -23,7 +13,7 @@
 
 #create game class and init properties
 
-class Game(): #step1
+class Game(): #step1, step8
     def __init__(self):
         self.turn = 'X'
         self.tie = False
@@ -45,6 +35,7 @@ class Game(): #step1
             self.check_winner()
             self.check_for_tie()
             if self.winner or self.tie:
+                self.print_message()
                 break
             self.switch_turn()
 
@@ -59,9 +50,6 @@ class Game(): #step1
                 ----------
             3)  {b['a3'] or ' '} | {b['b3'] or ' '} | {b['c3'] or ' '}
         """)
-            #if true render the board
-    #while True:
-    #    self.print_board()
 
     def print_message(self):
         if self.tie:
@@ -111,31 +99,9 @@ class Game(): #step1
         self.print_board()
         self.print_message()
     
-
     #instantiate game
 game = Game()
 
     #call play_game method
 game.play_game()
 
-
-
-        #invalid move
-     #   if move not in self.board or self.board[move] is not None:
-      #      print('Invalid move. Try again')
-       #     continue
-
-        #check for winner
-    #    if self.check_winner():
-     #       self.print_board()
-      #      print(f"Player {self.turn} wins")
-       #     break
-
-        #check for tie
-    #    if self.check_tie():
-     #       self.print_board()
-      #      print("It's a tie! Play again?")
-       #     break
-
-       # self.turn = 'O' if self.turn == 'X' else 'X'        
-        #switch turns
